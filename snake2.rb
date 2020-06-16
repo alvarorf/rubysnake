@@ -92,7 +92,7 @@ class Game
   end
 
   def draw
-    Square.new(x: @ball_x * SQUARE_SIZE, y: @ball_y * SQUARE_SIZE, size: SQUARE_SIZE, color: 'random')
+    Square.new(x: @ball_x * SQUARE_SIZE, y: @ball_y * SQUARE_SIZE, size: SQUARE_SIZE, color: 'yellow')
     Text.new(text_message, color: 'green', x: 10, y: 10, size: 25, z: 1)
   end
 
