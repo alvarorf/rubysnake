@@ -1,5 +1,6 @@
 require 'ruby2d'
 set background: Image.new("snake-skin.jpg",width:640,height:480)
+set fps_cap: 1
 GRID_SIZE = 20
 class Snake
     def initialize
@@ -13,13 +14,25 @@ class Snake
 
         end
     end
+
+    def move
+        @positions.shift
+        case @direction
+        when 'down'
+            @positions.push([head[0],head[1]+1])
+        end
+    end
+
+    def head
+        @positions.last
+    end
 end
 snake= Snake.new
 
 update do
-    
-
-    
+    clear
+    set background: Image.new("snake-skin.jpg",width:640,height:480)
+    snake.move
     snake.draw
 end
 
