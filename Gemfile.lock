@@ -1,5 +1,16 @@
-source 'https://rubygems.org'
-require 'rubygems'
-ruby '>= 2.0.5'
+GEM
+  remote: https://rubygems.org/
+  specs:
+    ruby2d (0.9.4)
 
-gem 'ruby2d', '~> 0.9.4'
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  ruby2d (~> 0.9.4)
+
+RUBY VERSION
+   ruby 2.7.0p0
+
+BUNDLED WITH
+   2.1.4
