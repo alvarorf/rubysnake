@@ -5,11 +5,12 @@ set background: Image.new("snake-skin.jpg",width:640,height:480)
 require 'ruby2d'
 
 set background: 'navy'
-set fps_cap: 15
+set fps_cap: 10
 
 SQUARE_SIZE = 20
 GRID_WIDTH = Window.width / SQUARE_SIZE
 GRID_HEIGHT = Window.height / SQUARE_SIZE
+
 
 class Snake
   attr_writer :direction
@@ -92,8 +93,8 @@ class Game
   end
 
   def draw
-    Square.new(x: @ball_x * SQUARE_SIZE, y: @ball_y * SQUARE_SIZE, size: SQUARE_SIZE, color: 'random')
-    Text.new(text_message, color: 'green', x: 10, y: 10, size: 25, z: 1)
+    Square.new(x: @ball_x * SQUARE_SIZE, y: @ball_y * SQUARE_SIZE, size: SQUARE_SIZE, color: 'white')
+    Text.new(score_message, color: 'black', x: 10, y: 10, size: 25, z: 1)
   end
 
   def snake_hit_ball?(x, y)
@@ -116,12 +117,20 @@ class Game
 
   private
 
-  def text_message
+  def score_message
     if finished?
       "Game over, Your Score was #{@score}. Press 'R' to restart. "
     else
       "Score: #{@score}"
     end
+  end
+
+  def max_score_message
+    "Max score: #{@max_score}"
+    if (@score>=@max_score)
+        @max_score=@score
+    end
+    
   end
 end
 
