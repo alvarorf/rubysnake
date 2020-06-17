@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 require 'rubygems'
 ruby '>= 2.0.5'
 
