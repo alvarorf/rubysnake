@@ -1,10 +1,11 @@
 require 'ruby2d'
 
 set background: Image.new("snake-skin.jpg",width:640,height:480)
+$backgmusic = Music.new('./music/backgmusic.mp3') #Source (royalty free): https://www.bensound.com/
+$eat = Sound.new('./music/eat.wav') #Source (royalty free): https://freesound.org
+$backgmusic.play
+$backgmusic.loop = true
 
-require 'ruby2d'
-
-set background: 'navy'
 set fps_cap: 10
 
 SQUARE_SIZE = 20
@@ -14,6 +15,7 @@ GRID_HEIGHT = Window.height / SQUARE_SIZE
 
 class Snake
   attr_writer :direction
+  
 
   def initialize
     @positions = [[2, 0], [2, 1], [2, 2], [2 ,3]]
@@ -94,7 +96,7 @@ class Game
 
   def draw
     Square.new(x: @ball_x * SQUARE_SIZE, y: @ball_y * SQUARE_SIZE, size: SQUARE_SIZE, color: 'white')
-    Text.new(score_message, color: 'black', x: 10, y: 10, size: 25, z: 1)
+    Text.new(score_message, color: 'white', x: 10, y: 10, size: 25, z: 1)
   end
 
   def snake_hit_ball?(x, y)
@@ -108,6 +110,7 @@ class Game
   end
 
   def finish
+
     @finished = true
   end
 
@@ -119,19 +122,13 @@ class Game
 
   def score_message
     if finished?
+      $backgmusic.stop
       "Game over, Your Score was #{@score}. Press 'R' to restart. "
     else
       "Score: #{@score}"
     end
   end
 
-  def max_score_message
-    "Max score: #{@max_score}"
-    if (@score>=@max_score)
-        @max_score=@score
-    end
-    
-  end
 end
 
 snake = Snake.new
@@ -149,6 +146,7 @@ update do
   
 
   if game.snake_hit_ball?(snake.x, snake.y)
+    $eat.play
     game.record_hit
     snake.grow
   end
@@ -168,6 +166,10 @@ on :key_down do |event|
   if game.finished? && event.key == 'r'
     snake = Snake.new
     game = Game.new
+    #$backgmusic = Music.new('./music/backgmusic.mp3') #Source (royalty free): https://www.bensound.com/
+    $eat = Sound.new('./music/eat.wav') #Source (royalty free): https://freesound.org
+    $backgmusic.play
+    $backgmusic.loop = true
   end
 end
 
