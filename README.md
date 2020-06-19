@@ -1,24 +1,26 @@
-# Using Bootstrap: Newsweek Clone
+# Ruby snake
 
 > Welcome to my Ruby snake game. 
 
-This is a project built using the ruby2d library. To run this, you should have installed such library and after that you may run the game by typing in: ```ruby snake.rb``` into the console.
+This is a project built using the *ruby2d* gem/library. To run this, you should have installed such library and after that you may run the game by typing in: ```ruby snake.rb``` into the console.
 
-## To install Ruby2d
-**First: Installed the required dependencies
-[For mac] (https://www.ruby2d.com/learn/macos/)
+### To install Ruby2d
+**First**: Install the required dependencies
+For Mac: [@link] (https://www.ruby2d.com/learn/macos/)
+For Windows: [@link] (https://www.ruby2d.com/learn/windows/)
+For Linux: [@link] (https://www.ruby2d.com/learn/linux/)
 
-- HTML
-- CSS
-- Bootstrap 4
+**Second**: Install the *ruby2d* gem
+Simply type into the command line: ```gem install ruby2d``` and wait for the installation process to complete.
+
+### Technologies used
+- Ruby
+- Ruby2d
 - Stylelint
 - Visual Studio Code
+- Linux
 
-### Setup
-
-None. You just need to decompress and drag and drop onto the browser. Any web browser will do, Mozilla, Safari, or Chrome.
-
-## Authors
+## Author
 
 👤 **Alvaro Ruiz**
 
@@ -26,26 +28,12 @@ None. You just need to decompress and drag and drop onto the browser. Any web br
 - Twitter: [@aaruizf](https://twitter.com/aaruizf)
 - Linkedin: [linkedin](https://www.linkedin.com/in/alvaro-r-22810915a/)
 
-## 🤝 Contributing
-
-Contributions, issues and feature requests are welcome!
-
-Feel free to check the [issues page](issues/).
 
 ## Show your support
 
 Give a ⭐️ if you like this project!
 
 
-## 📝 License
+## Screenshot:
 
-This project is for microverse course purposes.
-
-
-## Screenshots:
-
-## Index:
-![screenshot](/images/Index.png)
-
-## Search   :
-![screenshot](/images/Search.png)
+![screenshot](/screenshot.png)
